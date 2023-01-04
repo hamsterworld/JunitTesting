@@ -23,7 +23,7 @@ public class MessageRenderer implements IRenderer{
     public String Render(Message message) {
         String Render = "";
         for (IRenderer subRenderer : subRenderers) {
-            Render += subRenderer.Render(message);
+            Render += subR enderer.Render(message);
         }
         return Render;
     }
