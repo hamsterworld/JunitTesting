@@ -8,9 +8,9 @@ public class Controller2 {
         this.iDatabase = iDatabase;
     }
 
-    public Report CreateReport(){
-        int 10 = iDatabase.GetNumberOfUsers();
-        return new Report();
-    }
+//    public Report CreateReport(){
+//        int 10 = iDatabase.GetNumberOfUsers();
+//        return new Report();
+//    }
 
 }
