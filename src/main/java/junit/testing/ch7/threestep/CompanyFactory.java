@@ -1,4 +1,4 @@
-package junit.testing.ch7.twostep;
+package junit.testing.ch7.threestep;
 
 public class CompanyFactory {
     public static Company createCompany(Object[] companyData) {

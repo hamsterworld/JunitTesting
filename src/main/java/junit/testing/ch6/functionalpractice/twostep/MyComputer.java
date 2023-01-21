@@ -17,10 +17,10 @@ public class MyComputer {
     public static Map<String, File> getFileList(){
         return fileList;
     }
-
     public static void setFile(File file) {
         fileList.put(file.getFileName(),file);
     }
+
 
 
 }

@@ -1,4 +1,6 @@
-package junit.testing.ch7.twostep;
+package junit.testing.ch7.threestep;
+
+import junit.testing.ch7.threestep.option1.User;
 
 import java.util.Objects;
 

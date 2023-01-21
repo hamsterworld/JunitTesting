@@ -1,12 +1,13 @@
-package junit.testing.ch7.twostep;
+package junit.testing.ch7.threestep;
 
+import junit.testing.ch7.threestep.option1.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.testing.ch7.twostep.User.UserType.Customer;
-import static junit.testing.ch7.twostep.User.UserType.Employee;
+import static junit.testing.ch7.threestep.option1.User.UserType.Customer;
+import static junit.testing.ch7.threestep.option1.User.UserType.Employee;
 
 
 @Repository

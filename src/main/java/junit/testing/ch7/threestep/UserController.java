@@ -1,4 +1,4 @@
-package junit.testing.ch7.twostep;
+package junit.testing.ch7.threestep;
 
 import junit.testing.ch7.onestep.RequestMapping;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package junit.testing.ch7.threestep.option1;
+package junit.testing.ch7.threestep.option2;
 
 import junit.testing.ch7.threestep.Company;
 
@@ -36,10 +36,6 @@ public class User {
 
     public void ChangeEmail(String newEmail, Company company){
 
-        if(IsEmailConfirmed){
-            return;
-        }
-
         if(Email.equals(newEmail)){
             return;
         }
@@ -54,6 +50,13 @@ public class User {
         this.Email = newEmail;
         this.userType = newType;
 
+    }
+
+    public String CanChangeEmail(){
+        if(IsEmailConfirmed){
+            return "Cant change a confirmed email";
+        }
+        return null;
     }
 
     public enum UserType{

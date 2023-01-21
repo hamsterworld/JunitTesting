@@ -1,4 +1,4 @@
-package junit.testing.ch7.twostep;
+package junit.testing.ch7.threestep;
 
 import org.springframework.stereotype.Component;
 

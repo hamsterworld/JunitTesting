@@ -1,6 +1,5 @@
 package junit.testing.ch7.twostep;
 
-import junit.testing.ch7.onestep.Repository.DataBase;
 
 public class User {
 
