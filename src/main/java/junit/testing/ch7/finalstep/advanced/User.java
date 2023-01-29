@@ -1,6 +1,6 @@
-package junit.testing.ch7.threestep.option1;
+package junit.testing.ch7.finalstep.advanced;
 
-import junit.testing.ch7.threestep.Company;
+import junit.testing.ch7.finalstep.advanced.domain_event.DomainEvent;
 
 public class User {
 
@@ -34,15 +34,11 @@ public class User {
         this.userType = userType;
     }
 
-    public String ChangeEmail(String newEmail, Company company){
+    public void ChangeEmail(String newEmail, Company company){
 
-        // 유저가 이메일을 확인햇는지 안했는지 전제조건을 확인하는 곳
-        if(IsEmailConfirmed){
-            return "이메일을 변경할수없습니다.";
-        }
-
+        // 여기서 팅겨낸다 할지라도 어쨋든 필드값은 Email 과 userType 은 들어와있으므로 메시지버스에서 메시지를 보내게된다.
         if(Email.equals(newEmail)){
-            return "같은 이메일은 안됩니다.";
+            return;
         }
 
         UserType newType = company.IsEmailCorporate(newEmail) ? UserType.Customer : UserType.Employee;
@@ -54,8 +50,15 @@ public class User {
 
         this.Email = newEmail;
         this.userType = newType;
+        UserService.domainEvents.add(new DomainEvent(UserId,this.Email));
 
-        return "성공적으로 변경";
+    }
+
+    public String CanChangeEmail(){
+        if(IsEmailConfirmed){
+            return "Cant change a confirmed email";
+        }
+        return null;
     }
 
     public enum UserType{

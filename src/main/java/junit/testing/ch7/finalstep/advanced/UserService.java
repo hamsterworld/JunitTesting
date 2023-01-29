@@ -1,20 +1,21 @@
-package junit.testing.ch7.threestep.option2;
+package junit.testing.ch7.finalstep.advanced;
 
-import junit.testing.ch7.threestep.*;
+import junit.testing.ch7.finalstep.advanced.domain_event.DomainEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * 성능저하를 원치않으므로
- * 컨트롤러단이 복잡해지더라도
- * 성능과 도메인 분리를 둘다 생각햇다.
- * 하지만 user 에서 어쨋든 새로운 매서드를 파서 확인하므로 (이부분에서조차 컨트롤러단에서는 의사결정을 하지않고 오직, 도메인클래스만이 의사결정을 한다. ex) user.CanChangeEmail())
+ * 변경되지않는 경우에도 메시지를 보내야되는경우라면?
+ *
  */
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
-
+    public static final List<DomainEvent> domainEvents = new ArrayList<>();
     private final UserRepository userRepository;
     private final MessageBus messageBus;
 
@@ -23,13 +24,6 @@ public class UserService {
         User foundedUser = userRepository.findUserById(userId);
         User user = UserFactory.createUser(foundedUser);
 
-        // 컴퍼니는 이메일 확인된이후 확인이 된다.
-        // 그러나 이러한방법은 domainModel 의 캡슐화가 부족하게된다.
-//        if(user.IsEmailConfirmed){
-//            return "cant change a confirmed email ";
-//        }
-
-        // 아래 이런식으로 변경한다.
         Preconditons(user.CanChangeEmail());
 
         Object[] companyData = userRepository.getCompany();
@@ -39,7 +33,13 @@ public class UserService {
         user.ChangeEmail(newEmail,company);
 
         userRepository.saveUser(user);
-        return messageBus.sendEmailChangedMessage(userId,newEmail);
+
+        // 이런 도메인이벤트 class 의 도입으로 비즈니스 로직 파편화와 의존성주입같은 테스트를 힘들게하는것들을 단번에 쳐낼수있었다.
+        for (DomainEvent domainEvent : domainEvents) {
+            messageBus.sendEmailChangedMessage(domainEvent.getUserId(), domainEvent.getNewEmail());
+        }
+
+        return "ok";
 
     }
 
