@@ -1,4 +1,4 @@
-package junit.testing.ch6.functionalpractice.threestep.persister;
+package junit.testing.ch6.functionalpractice.fourstep.persister;
 
 public class FileUpdate {
 

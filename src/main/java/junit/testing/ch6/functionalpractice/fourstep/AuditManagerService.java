@@ -1,7 +1,7 @@
-package junit.testing.ch6.functionalpractice.threestep;
+package junit.testing.ch6.functionalpractice.fourstep;
 
-import junit.testing.ch6.functionalpractice.threestep.persister.FileUpdate;
-import junit.testing.ch6.functionalpractice.threestep.persister.Persister;
+import junit.testing.ch6.functionalpractice.fourstep.persister.FileUpdate;
+import junit.testing.ch6.functionalpractice.fourstep.persister.Persister;
 
 import java.time.LocalDateTime;
 import java.util.List;

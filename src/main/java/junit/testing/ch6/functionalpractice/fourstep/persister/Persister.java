@@ -1,7 +1,7 @@
-package junit.testing.ch6.functionalpractice.threestep.persister;
+package junit.testing.ch6.functionalpractice.fourstep.persister;
 
-import junit.testing.ch6.functionalpractice.threestep.File;
-import junit.testing.ch6.functionalpractice.threestep.MyComputer;
+import junit.testing.ch6.functionalpractice.fourstep.File;
+import junit.testing.ch6.functionalpractice.fourstep.MyComputer;
 
 import java.util.ArrayList;
 import java.util.List;

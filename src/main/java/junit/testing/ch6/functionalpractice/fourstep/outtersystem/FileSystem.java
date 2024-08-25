@@ -1,4 +1,4 @@
-package junit.testing.ch6.functionalpractice.threestep.outtersystem;
+package junit.testing.ch6.functionalpractice.fourstep.outtersystem;
 
 
 import junit.testing.ch6.functionalpractice.threestep.File;

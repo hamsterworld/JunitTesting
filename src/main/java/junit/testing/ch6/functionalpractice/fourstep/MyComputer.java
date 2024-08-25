@@ -1,4 +1,4 @@
-package junit.testing.ch6.functionalpractice.threestep;
+package junit.testing.ch6.functionalpractice.fourstep;
 
 import java.util.HashMap;
 import java.util.Map;

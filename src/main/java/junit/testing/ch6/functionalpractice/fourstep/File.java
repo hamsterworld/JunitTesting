@@ -1,4 +1,4 @@
-package junit.testing.ch6.functionalpractice.threestep;
+package junit.testing.ch6.functionalpractice.fourstep;
 
 /**
  * 너는 컴퓨터 외부에 있는놈임.
