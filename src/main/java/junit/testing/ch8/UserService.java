@@ -21,7 +21,6 @@ public class UserService {
 
         Company company = userRepository.getCompany();
 
-        // 내가 의사결정한다.
         user.ChangeEmail(newEmail,company);
 
         userRepository.saveUser(user);
